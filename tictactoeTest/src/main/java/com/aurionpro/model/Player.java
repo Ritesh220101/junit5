@@ -1,20 +1,31 @@
 package com.aurionpro.model;
 
 public class Player {
-	String playerName;
+	private String name;
+	private MarkType mark;
 
-	public Player(String playerName) {
+	public Player(String name) {
 		super();
-		this.playerName = playerName;
+		this.name = name;
 	}
 
-	public String getPlayerName() {
-		return playerName;
+	public String getName() {
+		return name;
 	}
 
-	public void setPlayerName(String playerName) {
-		this.playerName = playerName;
+	public void setName(String name) {
+		this.name = name;
 	}
+
+	public MarkType getMark() {
+		return mark;
+	}
+
+	public void setMark(MarkType mark) {
+		this.mark = mark;
+	}
+	
+	
 	
 	
 }

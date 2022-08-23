@@ -1,8 +1,5 @@
 package com.aurionpro.model;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import java.util.*;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -21,21 +18,22 @@ public class BoardTest {
 
 	@Test
 	void testCreateBoard_allNineCellsAreEmpty() {
-		boolean expected = false;
-		boolean actual = board.isBoardFull();
-		assertEquals(expected, actual);
+		boolean expected = true;
+		boolean actual = true;
+		Cell[] cells = board.getCells();
+		for(Cell c:cells) {
+			if(c.getMark()!=MarkType.EMPTY)
+				actual = false;		
+		}
+		assertTrue(expected==actual);
 	}
 
 	@Test
 	void testSetCellMark_ableToMarkAtSpecificLocation() {
-		Board board1 = new Board();
-		board1.setCellMark(0, MarkType.X);
-		Cell[] expected = board1.getCells();
-		
-		board.setCellMark(0, MarkType.X);
-		Cell[] actual = board.getCells();
+		Cell[] cells = board.getCells();
+		board.setCellMark(1, MarkType.O);
 
-		 assertArrayEquals(expected, actual);
+		 assertEquals(cells[1].getMark(), MarkType.O);
 	}
 
 	@Test

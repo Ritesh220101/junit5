@@ -19,13 +19,6 @@ public class Cell {
 	}
 
 	public void setMark(MarkType mark) {
-//		if(isCellEmpty())
-//			this.mark = mark;
-//		throw new CellAlreadyMarkException("Cell is already marked");
-//		if(this.mark!=MarkType.EMPTY) {
-//			throw new CellAlreadyMarkException("Cell is already marked");
-//		}
-//		this.mark = mark;
 		if(this.mark==MarkType.X || this.mark == MarkType.O)
 			throw new CellAlreadyMarkException("Cell is already marked");
 		this.mark = mark;
@@ -36,26 +29,4 @@ public class Cell {
 		return "Cell [mark=" + mark + "]";
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((mark == null) ? 0 : mark.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Cell other = (Cell) obj;
-		if (mark != other.mark)
-			return false;
-		return true;
-	}
-	
 }

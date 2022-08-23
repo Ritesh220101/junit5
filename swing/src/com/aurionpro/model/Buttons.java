@@ -1,5 +1,6 @@
 package com.aurionpro.model;
 
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -20,6 +21,8 @@ public class Buttons implements ActionListener {
 		button.setFocusable(false);
 		button.setIcon(icon);
 		button.addActionListener(e-> System.out.println("Hell yea!!"));
+		button.setFont(new Font("Comic Sans",Font.BOLD,10));
+		
 		
 		JFrame frame = new JFrame(); 
 		frame.setTitle("Swing Practice"); 
